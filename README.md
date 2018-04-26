@@ -76,25 +76,34 @@ vim jni/jpeg/Android.mk
 
 The droid-VNC-server projects consists in three main modules parts: the daemon, wrapper libs and the GUI.
 
-- Daemon -
+- Daemon
+```
 Provides the vnc server functionality, injects input/touch events, clipboard management, etc
 Available in jni/ folder
-
-- Wrapper libs -
+```
+- Wrapper libs
+```
 Compiled against the AOSP so everyone can build the daemon/GUI without having to fetch +2GB files.
 Currently there are 2 wrappers, gralloc and flinger.
 
 Available in nativeMethods/ folder, and precompiled libs in nativeMethods/lib/
+```
 
-- GUI -
+- GUI
+```
 GUI handles user-friendly control.
 Connects to the daemon using local IPC.
+```
 
+```
 -------------- Compile C daemon ---------------------
 On project folder:
   $ ndk-build
   $ ./updateExecsAndLibs.sh
 
+```
+
+```
 -------------- Compile Wrapper libs -----------------
   $ cd <aosp_folder>
   $ . build/envsetup.sh
@@ -106,6 +115,9 @@ To build:
   $ mm .
   $ cd <droid-vnc-folder>
   $ ./updateExecsAndLibs.sh
+```
 
+```
 -------------- Compile GUI------- -------------------
 Import using eclipse as a regular Android project
+```
